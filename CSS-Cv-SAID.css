@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@100&display=swap');
+body {margin:0}
+
+/*//////////////////////////////// MENU //////////////////////////////////////////*/
+.root{
+    background-color: white;
+    display: flex;
+    margin-right: 5px;
+    margin-left: 5px;
+    
+}
+
+.USTHBlogo {
+    justify-content: left;
+    width: 30%;
+    margin-left: 15px;
+    margin-top: 17px;
+}
+
+.menu {
+    display: flex;
+    justify-content: right; 
+    padding: 20px;
+    padding-top: 10px;
+    
+    
+}
+
+.menu button {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition-duration: 0.3s;
+    color: #010734;;
+    font-size: 23.5px;
+    text-decoration: none;
+    border-radius: 10%;
+    margin: 2px;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+/*lorsqu'on passe la souris sur le bouton*/
+.menu button:hover {
+    color:#2EAF7D;
+    background-color: #f1eded;
+    opacity: .9;
+    border-style: solid;
+    border-color: #2EAF7D;
+    border-width: 0px 0px 5px 0px;
+    
+}
+
+/*lorsqu'on clique sur le bouton*/
+.menu button:focus {
+    background-color: #2EAF7D;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 0px 5px 0px;
+    color: white;
+}
+
+
+
+hr{
+    height: 5px;
+    background-color: #f1eded;
+    opacity: .5;
+    width: 100%;
+
+  }
+
+#USTHBlogo{
+    height: 80px;
+    width: 75px;
+}
+
+
+
+/*//////////////////////////////////////////////////////////CONTENU/////////////////////////////////////////////////*/
+
+/**************************************CONTENU RESUME***************************************/
+.content{
+  font-family: 'Roboto', sans-serif;
+  color: #575757;
+  font-size: 20px;
+  
+}
+
+.identite{
+    width:25%;
+    text-align: center;
+    padding-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
+    margin-left: 7%;
+    margin-right: 3%;
+    margin-top: 0.5%;
+    margin-bottom: auto;
+    
+    
+}
+
+#photoIde{
+    border-radius: 60%;
+    opacity: .98;
+    position: relative;
+    width: 185px;
+    height: 190px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#fontAwsomeResumeIde{
+    font-size:20px;
+    color: #2EAF7D;
+}
+
+#fontAwsomeResumeSep{
+    margin: 0%;
+    font-size:50px;
+    color: #2d5dfd;
+    opacity: .5;
+}
+
+.titre{
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 0%;
+}
+
+
+.resume{
+  margin-left: 5%;
+  width: 50%;
+  margin-bottom: 3%;
+  
+}
+/**************************************CONTENU FORMATION   EXPERIENCE   CERTIFICATIONS PROJETS***************************************/
+
+/*définir la façon dont la hauteur et la largeur totale d'un élément est calculée 
+dans ce cas, border-box indique au navigateur de prendre en compte la bordure (border) et le remplissage (padding) dans la valeur définie pour la largeur et la hauteur*/
+* {
+    box-sizing: border-box;
+  }
+  
+
+/* manipuler la timeline ligne horisontale verte */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* manipuler la timeline ligne horisontale verte, le ::after indique que les propriétés definis seront affectées après que le fichier html soit lancé*/
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #2EAF7D;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* manipuler les cercles de la timeline*/
+.container {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+
+/* maniupuler les cercles de la timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px; /*le moins indique qu'il faut inverser la direction du decalage'*/
+  background-color: white;
+  border: 4px solid #7c9bff;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1; /*pour mettre le circle en avant par rapport a la ligne blanche (z-index précise l'index de l'element dans la pile)*/
+}
+
+/* placer les elements de cette classe à gauche */
+.left {
+  left: 20;
+  
+}
+
+/* placer les elements de cette classe à droite */
+.right {
+  left: 50%;
+  
+}
+
+/* Ajouter les triangles aux carrés qui comportent le texte à gauche */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px; /*positionner le triangle par rapport au carré auquel il appartient (le mettre a 22px à partir du haut du carré)*/
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #2EAF7D;
+  border-width: 10px 2px 10px 10px; /*taille du triangle*/
+  border-color: transparent transparent transparent #2EAF7D;
+  
+}
+
+/* Ajouter les triangles aux carrés qui comportent le texte à droite */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #2EAF7D;
+  border-width: 10px 10px 10px 2px;
+  border-color: transparent #2EAF7D transparent transparent;
+}
+
+/* Fixer les cercles des conteneurs droits sur la meme ligne que timeline */
+.right::after {
+  left: -16px;
+}
+
+/* manipuler le contenaire des formations (rectangle ou figure le texte)*/
+.texteTimeline {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  border: medium solid;
+  border-color: #2EAF7D;
+  
+}
+
+/*definir la marge des listes a puces*/
+li 
+{ 
+    margin-bottom: 10px; 
+    
+}
+
+h2
+{
+    color: #7c9bff;
+}
+
+h3{
+    padding-left: 5%;
+    color: #ff0000b7;
+}
+
+/**************************************CONTENU CERTIFICATION***************************************/
+
+#referenceLabel{
+  position: relative;
+  border: 1px solid; 
+  border-color: #20beff;
+  border-radius: 50%;
+  padding: 10px 10px 10px 10px;
+  top: 30px;
+  left: 25%;
+  color: #20beff;
+  padding: 15px 15px 15px 15px;
+}
+
+
+  /**************************************CONTENU LANGUES***************************************/
+
+/* manipuler la timeline ligne horisontale verte */
+.timelineLangues {
+  position: absolute;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: 30%;
+    
+}
+  
+/* manipuler la timeline ligne horisontale verte, le ::after indique que les propriétés definis seront affectées après que le fichier html soit lancé*/
+.timelineLangues::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #2EAF7D;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* manipuler les cercles de la timeline*/
+.containerLangues {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+
+/* maniupuler les cercles de la timeline */
+.containerLangues::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px; /*le moins indique qu'il faut inverser la direction du decalage'*/
+  background-color: white;
+  border: 4px solid #7c9bff;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1; /*pour mettre le circle en avant par rapport a la ligne blanche (z-index précise l'index de l'element dans la pile)*/
+}
+
+/* placer la timeline à gauche */
+.timelineLangues::after {
+  left: 31px;
+}
+
+/* conteneurs doivent occuper toute la largeur */
+.containerLangues {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+}
+
+
+/* S'assurer que les cercles sont tous positionnés à gauche*/
+.leftLangues::after {
+  left: 15px;
+}
+     
+
+/* manipuler le contenaire des formations (rectangle ou figure le texte)*/
+.texteTimelineLangue {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  border: medium solid;
+  border-color: #2EAF7D;
+    
+}
+
+  
+
+/**************************************CONTENU COMPETENCES***************************************/
+
+.competences{
+  width:65%;
+  
+  padding-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5%;
+  margin-left: 18%;
+  margin-right: 3%;
+  margin-top: 1%;
+  margin-bottom: 10%;
+  
+  
+}    
+
+/* texte de conteneur*/
+#competencesLigne
+{
+  margin-left: 15%;
+}
+
+
+
+
+/**************************************CONTENU CENTRES INTERETS***************************************/
+
+.centresInter{
+  
+  padding-top: 20px;
+  border-radius: 50%;
+  margin-left: 30%;
+  margin-right: 10%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  border: 2px dotted ;
+  border-color: #2EAF7D ;
+  
+  text-align: center;
+  
+} 
+
+#centresInterPetit{
+  width:150px;
+  height:150px;
+  
+}
+
+
+#centresInterGrand{
+  width:250px;
+  height:250px;
+  
+}
+
+/* texte de conteneur*/
+#centresInterLigne
+{
+  margin-left: 15%;
+}
+
+
+/**************************************CONTENU DIVERS***************************************/
+
+.divers{
+  width: fit-content;
+  height: fit-content;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+  margin-bottom: 10%;
+  
+  text-align: center;
+  
+} 
+
+  
+
+
+
+/*############################################ RESPONSIVE #############################################################*/
+/* rendre le rendu responsive (cohérent lorsque la taille de l'ecran diminue) */
+@media screen and (max-width: 800px) {
+  /*-------------Menu-------------*/
+  .root{
+    display: block;
+    
+  } 
+
+  .menu {
+    display: block;
+    justify-content: left;
+    padding: 20px;
+    padding-top: 10px;
+    
+  }
+
+  .menu button {
+    width: 100%;
+  }
+
+  /*-------------Resume-------------*/
+
+  .resume{
+    width: 90%;
+    text-align: center;
+    margin-bottom: 10%;
+  }
+
+  .identite{
+    width: 70%;
+    margin : 0 auto;
+  }
+  #resumeFenetre{
+    text-align: center;
+    
+  }
+
+
+  /*-------------Timelines-------------*/
+
+  /* placer la timeline à gauche */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* conteneurs doivent occuper toute la largeur */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Ajuster les triangles s'assurer qu'il sont tous à gauche meme ceux qui étaint à droite initialement */
+  .container::before {
+    left: 60px;
+    border: medium solid #2EAF7D;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #2EAF7D transparent transparent;
+  }
+
+  /* S'assurer que les cercles sont tous positionnés à gauche*/
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+  /* tous les conteneurs doivent se positionner comme ceux à gauche (plus de conteneurs à droite)*/
+  .right {
+    left: 0%;
+  }
+
+    
+}
+
+  
+
+  
+  
